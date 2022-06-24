@@ -21,7 +21,7 @@ public class GetSynchronizedMap implements Callable<String> {
             map.get(i);
         }
         long resultTime =   System.currentTimeMillis() - start;
-        return "Время выполнения чтения SynchronizedMap: " + resultTime + " "  + map.size();
+        return "Время выполнения чтения SynchronizedMap: " + resultTime + " милисикунд";
     }
 
 }

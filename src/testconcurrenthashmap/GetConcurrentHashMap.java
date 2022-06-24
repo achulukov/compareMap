@@ -21,6 +21,6 @@ public class GetConcurrentHashMap implements Callable<String> {
             map.get(i);
         }
         long resultTime =   System.currentTimeMillis() - start;
-        return "Время выполнения чтения ConcurrentHashMap: " + resultTime + " "  + map.size();
+        return "Время выполнения чтения ConcurrentHashMap: " + resultTime + " милисикунд";
     }
 }

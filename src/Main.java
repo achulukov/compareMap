@@ -19,19 +19,13 @@ public class Main {
 
         Callable<String> putConcurrentHashMap = new PutConcurrentHashMap(concurrentHashMap, arr);
         Collection<Callable<String>> listPutConcurrentHashMap = new ArrayList<>();
-        listPutConcurrentHashMap.add(putConcurrentHashMap);
-        listPutConcurrentHashMap.add(putConcurrentHashMap);
-        listPutConcurrentHashMap.add(putConcurrentHashMap);
-        listPutConcurrentHashMap.add(putConcurrentHashMap);
+        for (int i = 0; i < 4; i++) listPutConcurrentHashMap.add(putConcurrentHashMap);
         String result = concurrentHashMapPool.invokeAny(listPutConcurrentHashMap);
         System.out.println(result);
 
         Callable<String> getConcurrentHashMap = new GetConcurrentHashMap(concurrentHashMap, arr);
         Collection<Callable<String>> listGetConcurrentHashMap = new ArrayList<>();
-        listGetConcurrentHashMap.add(getConcurrentHashMap);
-        listGetConcurrentHashMap.add(getConcurrentHashMap);
-        listGetConcurrentHashMap.add(getConcurrentHashMap);
-        listGetConcurrentHashMap.add(getConcurrentHashMap);
+        for (int i = 0; i < 4; i++) listGetConcurrentHashMap.add(getConcurrentHashMap);
         String result1 = concurrentHashMapPool.invokeAny(listGetConcurrentHashMap);
         System.out.println(result1);
 
@@ -40,19 +34,13 @@ public class Main {
 
         Callable<String> putSynchronizedMap = new PutSynchronizedMap(hashMap, arr);
         Collection<Callable<String>> listPutSynchronizedMap= new ArrayList<>();
-        listPutSynchronizedMap.add(putSynchronizedMap);
-        listPutSynchronizedMap.add(putSynchronizedMap);
-        listPutSynchronizedMap.add(putSynchronizedMap);
-        listPutSynchronizedMap.add(putSynchronizedMap);
+        for (int i = 0; i < 4; i++) listPutSynchronizedMap.add(putSynchronizedMap);
         String result3 = concurrentHashMapPool.invokeAny(listPutSynchronizedMap);
         System.out.println(result3);
 
         Callable<String> getSynchronizedMap = new GetSynchronizedMap(hashMap, arr);
         Collection<Callable<String>> listGetSynchronizedMap= new ArrayList<>();
-        listGetSynchronizedMap.add(getSynchronizedMap);
-        listGetSynchronizedMap.add(getSynchronizedMap);
-        listGetSynchronizedMap.add(getSynchronizedMap);
-        listGetSynchronizedMap.add(getSynchronizedMap);
+        for (int i = 0; i < 4; i++) listGetSynchronizedMap.add(getSynchronizedMap);
         String result4 = concurrentHashMapPool.invokeAny(listGetSynchronizedMap);
         System.out.println(result4);
 

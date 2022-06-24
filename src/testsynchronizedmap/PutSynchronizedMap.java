@@ -21,6 +21,6 @@ public class PutSynchronizedMap implements Callable<String> {
             map.put(i, arr[i]);
         }
         long resultTime =   System.currentTimeMillis() - start;
-        return "Время выполнения записи SynchronizedMap: " + resultTime + " "  + map.size();
+        return "Время выполнения записи SynchronizedMap: " + resultTime + " милисикунд";
     }
 }

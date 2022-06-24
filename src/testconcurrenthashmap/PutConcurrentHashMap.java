@@ -20,6 +20,6 @@ public class PutConcurrentHashMap implements Callable<String> {
             map.putIfAbsent(i, arr[i]);
         }
         long resultTime =   System.currentTimeMillis() - start;
-        return "Время выполнения записи ConcurrentHashMap: " + resultTime + " "  + map.size();
+        return "Время выполнения записи ConcurrentHashMap: " + resultTime + " милисикунд";
     }
 }
